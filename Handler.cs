@@ -37,17 +37,17 @@ namespace SpaceCeption
                 for (int i = 0; i < stringBuilder.Length; i++)
                 {
                     var character = stringBuilder[i];
-                    if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) < DESIREDLINEWIDTH)
+                    if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) < DESIREDLINEWIDTH - handler.GetTextSize(character.ToString(), font, fontSize))
                     {
-                        stringBuilder.Replace(character, '\u2002', i, 1); //2004 smaller 2003 huge 2001 massive
+                        stringBuilder.Replace(character, '\u2002', i, 1);
                     }
-                    else if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) < DESIREDLINEWIDTH)
+                    else if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) < DESIREDLINEWIDTH - handler.GetTextSize(character.ToString(), font, fontSize))
                     {
-                        stringBuilder.Replace(character, '\u2002', i, 1); //2004 smaller 2003 huge 2001 massive
+                        stringBuilder.Replace(character, '\u2002', i, 1);
                     }
-                    else if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) < DESIREDLINEWIDTH)
+                    else if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) < DESIREDLINEWIDTH - handler.GetTextSize(character.ToString(), font, fontSize))
                     {
-                        stringBuilder.Replace(character, '\u2002', i, 1); //2004 smaller 2003 huge 2001 massive
+                        stringBuilder.Replace(character, '\u2002', i, 1);
                     }
                 }
             }
@@ -59,15 +59,15 @@ namespace SpaceCeption
                     var character = stringBuilder[i];
                     if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) > DESIREDLINEWIDTH)
                     {
-                        stringBuilder.Replace(character, '\u200A', i, 1); //200A 8202
+                        stringBuilder.Replace(character, '\u200A', i, 1);
                     }
                     else if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) > DESIREDLINEWIDTH)
                     {
-                        stringBuilder.Replace(character, '\u200A', i, 1); //2004 smaller 2003 huge 2001 massive
+                        stringBuilder.Replace(character, '\u200A', i, 1);
                     }
                     else if (character == ' ' && handler.GetTextSize(stringBuilder.ToString(), font, fontSize) > DESIREDLINEWIDTH)
                     {
-                        stringBuilder.Replace(character, '\u200A', i, 1); //2004 smaller 2003 huge 2001 massive
+                        stringBuilder.Replace(character, '\u200A', i, 1);
                     }
 
                 }
